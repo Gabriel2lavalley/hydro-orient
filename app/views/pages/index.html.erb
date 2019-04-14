@@ -11,7 +11,13 @@
 <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
 
 <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
-
+<style>
+	body
+	{
+		background: #334467;
+		color: #E5EEFF;
+	}
+</style>
 </head>
 <body>
 <div id="header-wrapper">
@@ -21,7 +27,7 @@
 			<div id="menu">
 				<ul>
 					<li class="active"><a href="#" accesskey="1" title="">Homepage</a></li>
-					<li><a href="/pages/log-in" accesskey="2" title="">Log in</a></li>
+					<li><a href="<%= user_session_path %>" accesskey="2" title="">Log in</a></li>
 				</ul>
 			</div>
 		</div>
