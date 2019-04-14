@@ -1,143 +1,75 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>Synchronous Loading</title>
-    <meta name="viewport" content="initial-scale=1.0">
-    <meta charset="utf-8">
-    <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 50%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      .gm-style-iw {
-       background-color: #fff;
-       color: #000;
+<style>
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  #map {
+    height: 50%;
+  }
+  .gm-style-iw {
+   background-color: #fff;
+   color: #000;
+}
+</style>
+<div id="map"></div>
+<br>
+Counters
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnuc-eD5w58Dy2EjdUULXABCk7-MYvJcg&callback=initMap"></script>
+
+<script>
+  var markers = [];
+  function initMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 45.516136, lng: -73.656830},
+      zoom: 13
+    });
+
+    var locationCounters = [
+      [ 45.516136, -73.656830,"<div id='infoCounter0' data-time='0.045'>400000</div>"],
+      [ 45.5045, -73.5561,"<div id='infoCounter1' data-time='0.0025'>105000</div>"],
+      [ 45.5075, -73.5544,"<div id='infoCounter2' data-time='0.32'>7500150</div>"],
+      [ 45.5016, -73.5932,"<div id='infoCounter3' data-time='0.0089'>351000</div>"],
+      [ 45.5600, -73.5630,"<div id='infoCounter4' data-time='0.047'>551237</div>"],
+      [ 45.4985, -73.5794,"<div id='infoCounter5' data-time='0.0014'>45600147</div>"],
+      [ 45.4919, -73.6165,"<div id='infoCounter6' data-time='1000'>8954001</div>"],
+      [ 45.5365, -73.6147,"<div id='infoCounter7' data-time='0.0024'>22245100</div>"],
+      [ 45.5008, -73.5743,"<div id='infoCounter8' data-time='0.051'>6543210</div>"],
+      [ 45.5027, -73.5542,"<div id='infoCounter9' data-time='0.147'>23100041</div>"]
+    ];
+
+    var marker, i;
+
+    for (i = 0; i < locationCounters.length; i++) {
+      eval('infowindow'+ i +' = new google.maps.InfoWindow({ content: locationCounters[i][2] })');
+      console.log("test-->",i,"-->",locationCounters[i][0],"-->",locationCounters[i][2])
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locationCounters[i][0], locationCounters[i][1]),
+        map: map,
+        title: "Counter " + i
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          eval('infowindow'+i+'.open(map, marker)')
+          
+        }
+      })(marker, i));
+
+      // eval("google.maps.event.addListener(infowindow"+i+", 'domready', function() { var target = $($.parseHTML($(this)[0].content)); console.log('event trigger-->',parseFloat(target.data('time'))); var counter = 10000; setInterval( function() { target.html( counter++ ) }, 1000 ) });")
+      eval("google.maps.event.addListener(infowindow"+i+", 'domready', function() { var target = $($.parseHTML($(this)[0].content)); startCounter(target) });")
+
+      // Push the marker to the 'markers' array
+      markers.push(marker);
     }
-    </style>
-  </head>
-  <body>
-    <div id="map"></div>
-    <br>
-    Counter 1
-    <br>
-    <label for="counter1"> Start From</label>
-    <input type="number" name="" id="counter1" value="400000">
-    <label for="time1"> Speed</label>
-    <input type="number" name="" id="time1" value="450">
-    <br>
-    <br>
-    <hr>
-    <br>
-    Counter 2
-    <br>
-    <label for="counter2"> Start From</label>
-    <input type="number" name="" id="counter2" value="1500000">
-    <label for="time2"> Speed</label>
-    <input type="number" name="" id="time2" value="5000">
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnuc-eD5w58Dy2EjdUULXABCk7-MYvJcg&callback=initMap"></script>
-    <script>
-      function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 45.516136, lng: -73.656830},
-          zoom: 13
-        });
 
-        contentString = "<div id='Test1'></div>"
-        infowindow = new google.maps.InfoWindow({
-          content: contentString
-        });
-
-        var marker = new google.maps.Marker({
-          position: {lat: 45.516136, lng: -73.656830},
-          map: map,
-          title: 'First Marker'
-        });
-        marker.addListener('click', function() {
-          infowindow.open(map, marker);
-          // startCounter()
-        });
-
-        contentString1 = "<div id='Test2'></div>"
-        infowindow1 = new google.maps.InfoWindow({
-          content: contentString1
-        });
-
-        var marker1 = new google.maps.Marker({
-          position: {lat: 45.5049, lng: -73.5524},
-          map: map,
-          title: 'Second Marker'
-        });
-        marker1.addListener('click', function() {
-          infowindow1.open(map, marker1);
-          // startCounter()
-        });
-
-        google.maps.event.addListener(infowindow, 'domready', function() {
-          // var $el = $("#Test1"); //[make sure this is a unique variable name]
-            var target = $('#Test1');
-            var counter = $("#counter1").val()
-            setInterval( function() {
-              console.log(target)
-              target.html( counter++ );
-            }, ($("#time1").val()/1000) );
-        });
-        google.maps.event.addListener(infowindow1, 'domready', function() {
-          // var $el = $("#Test1"); //[make sure this is a unique variable name]
-          console.log("test",$(this))
-            var target = $('#Test2');
-            var counter = $("#counter2").val();
-            setInterval( function() {
-              console.log(target)
-              target.html( counter++ );
-            }, ($("#time2").val()/1000) );
-        });
-
-      }
-      function startCounter(){
-        console.log("inside counter")
-        var target = $('#Test1');
-        var counter = 400000;
-        setInterval( function() {
-          console.log(target)
-          target.html( counter++ );
-        }, 0.045 );
-      }
-    </script>
-    <script type="text/javascript">
-      //  var $el = $("#test"); //[make sure this is a unique variable name]
-      // $({someValue: 40000}).animate({someValue: 99}, {
-      //     duration: 10000,
-      //     easing:'swing', // can be anything
-      //     step: function() { // called on every step
-      //         // Update the element's text with rounded-up value:
-      //         $el.text(commaSeparateNumber(Math.round(this.someValue)));
-      //     }
-      // });
-
-     // function commaSeparateNumber(val){
-     //    while (/(\d+)(\d{3})/.test(val.toString())){
-     //      val = val.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
-     //    }
-     //    return val;
-     //  }
-
-     //  var INTERVAL = 0.450;
-     //  $(document).ready( function() {
-     //    var delay = INTERVAL;
-     //    var target = $('#counter');
-     //    var counter = parseInt( target.text(), 10 );
-     //    setInterval( function() {
-     //      target.text( counter++ );
-     //    }, delay );
-     //  } );
-    </script>
-  </body>
-</html>
+  }
+  function startCounter(target){
+    var target = $("#"+target.attr('id'))
+    var counter = target.text();
+    setInterval( function() {
+      target.html( counter++ );
+    }, target.data('time') );
+  }
+</script>
