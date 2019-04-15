@@ -15,6 +15,17 @@
 <div id="map"></div>
 <br>
 Counters
+<hr>
+<button class="counter" data-id="0">Counter 1</button>
+<button class="counter" data-id="1">Counter 2</button>
+<button class="counter" data-id="2">Counter 3</button>
+<button class="counter" data-id="3">Counter 4</button>
+<button class="counter" data-id="4">Counter 5</button>
+<button class="counter" data-id="5">Counter 6</button>
+<button class="counter" data-id="6">Counter 7</button>
+<button class="counter" data-id="7">Counter 8</button>
+<button class="counter" data-id="8">Counter 9</button>
+<button class="counter" data-id="9">Counter 10</button>
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnuc-eD5w58Dy2EjdUULXABCk7-MYvJcg&callback=initMap"></script>
 
@@ -72,4 +83,9 @@ Counters
       target.html( counter++ );
     }, target.data('time') );
   }
+  $(document).on('click', '.counter', function(event) {
+    console.log(markers[$(this).data("id")]);
+    google.maps.event.trigger(markers[$(this).data("id")], 'click');
+    /* Act on the event */
+  });
 </script>
