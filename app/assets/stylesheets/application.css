@@ -38,13 +38,20 @@
 		font-size: 12pt;
 		/*color: #E5EEFF;*/
 	}
+
+	@media only screen and (max-width: 600px) {
+		header-wrapper {
+			color:red;
+			width:100%;
+		}
+	}
 	
 	
 	h1, h2, h3
 	{
 		margin: 0;
 		padding: 0;
-		color: #404040;
+		color: #3E5A99;
 	}
 	
 	p, ol, ul
@@ -314,7 +321,7 @@
 
 	.title
 	{
-		margin-bottom: 3em;
+		margin-bottom: 1em;
 	}
 	
 	.title h2
@@ -336,7 +343,7 @@
 	#header-wrapper
 	{
 		overflow: hidden;
-		padding: 6em 0em 2em 0em;
+		padding: 2em 0em 2em 0em;
 	}
 
 	#header
@@ -408,7 +415,7 @@
 		text-decoration: none;
 		font-size: 0.90em;
 		font-weight: 600;
-		text-transform: uppercase;
+
 		outline: 0;
 		color: #FFF;
 	}
@@ -420,7 +427,7 @@
 	
 	#menu .current_page_item a
 	{
-		color: #FFF;
+		color: red;
 	}
 	
 
@@ -471,7 +478,7 @@
 	{
 		overflow: hidden;
 		width: 1200px;
-		padding: 2em 0px 0em 0px;
+		padding: 1em 0px 0em 0px;
 		text-align: center;
 	}
 	
@@ -505,7 +512,7 @@
 	#page-wrapper
 	{
 		overflow: hidden;
-		padding: 3em 0em 0em 0em;
+		padding: 0em 0em 0em 0em;
 		text-align: center;
 	}
 
@@ -566,7 +573,7 @@
 	{
 		letter-spacing: 1px;
 		font-size: 0.90em;
-		color: rgba(255,255,255,0.6);
+		color: #3E5A99;
 	}
 	
 	#copyright a
@@ -616,7 +623,7 @@
 		display: block;
 		padding-bottom: 1em;
 		font-size: 1em;
-		color: rgba(255,255,255,1);
+		color: #3E5A99;
 	}
 
 	#portfolio .title
@@ -739,7 +746,7 @@
 	
 	ul.tools li a
 	{
-		color: #FFF;
+		color: #3E5A99;
 	}
 	
 	ul.tools li a:before
@@ -751,7 +758,7 @@
 		border-radius: 50%;
 		line-height: 120px;
 		text-align: center;
-		color: #FFFFFF;
+		color: #3E5A99;
 	}
 
 /*********************************************************************************/
