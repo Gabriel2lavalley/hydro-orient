@@ -35,6 +35,7 @@ Select a counter
 
 <script>
   var markers = [];
+  var started_counters = [];
   function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 45.516136, lng: -73.656830},
@@ -81,11 +82,14 @@ Select a counter
 
   }
   function startCounter(target){
-    var target = $("#"+target.attr('id'))
-    var counter = target.text();
-    setInterval( function() {
-      target.html( counter++ + " l/s" );
-    }, target.data('time') );
+    if($.inArray( target.attr('id'), started_counters ) == -1){
+      var target = $("#"+target.attr('id'))
+      var counter = target.text();
+      started_counters.push(target.attr('id'));
+      setInterval( function() {
+        target.html( counter++ + " l/s" );
+      }, target.data('time') );
+    }
   }
   $(document).on('click', '.counter', function(event) {
     console.log(markers[$(this).data("id")]);

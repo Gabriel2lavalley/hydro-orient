@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   root 'pages#index'
   get 'pages/log-in'
   get 'pages/load_map'
+  get 'pages/contact_us'
 end
