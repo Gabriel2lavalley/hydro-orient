@@ -511,6 +511,7 @@ ul.contact li a:before
 #welcome
 {
 	padding-top: 25px;
+	width: inherit;
 }
 
 #welcome .content
@@ -1218,5 +1219,139 @@ ul.tools li a:before
 		max-width: 1460px;
 	}
 } */
+
+/* contact us page */
+
+.main {
+      width: 100%;
+      position: relative;
+      margin: 0 auto;
+      margin-top: 60px;
+      margin-bottom: 60px;
+        font-family: 'Questrial', sans-serif;
+          background: #fff;
+        box-shadow: 0 0 3px rgba(0,0,0,0.15);
+        padding: 30px 0 20px 0;
+        border-radius: 5px;
+    }
+    @media screen and (min-width: 768px) {
+      .main {
+        max-width: 750px;
+      }
+    }
+
+    .fieldset {
+      border-color: rgba(79, 87, 102, 0.25);
+    }
+    .fieldset--hidden {
+      border-color: transparent;
+    }
+
+    .visually-hidden {
+        font-size: 26px;
+        font-weight: 600;
+        margin: 0 0 20px 0;
+          color: #3E5A99;
+          width: 100%;
+          display: block;
+          border-bottom: solid 1px #e5e5e5;
+            margin: 0 0 10px 0;
+        padding: 0 0 10px 0;
+    }
+
+    .field {
+      float: left;
+      width: 100%;
+    }
+    @media screen and (min-width: 768px) {
+      .field--half {
+        width: 50%;
+      }
+    }
+    .field__input-wrapper {
+      position: relative;
+      padding: 10px;
+    }
+    .field__label {
+        margin-bottom: 5px;
+        display: block;
+        font-size: 18px;
+    }
+    
+    .field__input {
+        border: 1px solid rgba(79, 87, 102, 0.25);
+        border-radius: 5px;
+        color: #4f5766;
+        display: block;
+        font-size: 18px;
+        padding: 15px 10px;
+        box-sizing: border-box;
+          font-family: 'Questrial', sans-serif; 
+        width: 100%;
+    }
+    .field__input:focus{
+      outline: none;
+      border-color: rgb(62, 90, 153);
+    }
+    .field__checkbox {
+      vertical-align: top;
+    }
+    .field__checkbox-label {
+      margin-top: 2px;
+    }
+
+    .form__footer {
+      overflow: hidden;
+      padding: 0px 24px;
+      margin: 2px;
+    }
+    .form__submit {
+      margin-top: 20px;
+      float: right;
+    }
+
+    .btn {
+      cursor: pointer;
+      width: 100%;
+      position: relative;
+    }
+    @media screen and (min-width: 768px) {
+      .btn {
+        max-width: 315px;
+      }
+    }
+    .btn--cta {
+        border-radius: 10px;
+        background-color: #3E5A99;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        display: block;
+        font-size: 24px;
+        line-height: normal;
+        margin: 0 auto;
+        outline: none;
+        padding: 13px 100px;
+    }
+    h2.contact-us {
+        margin: 0 0 50px 0;
+        padding: 10px;
+        text-align: center;
+        font-size: 30px;
+        color: darken(#e5e5e5, 50%);
+        border-bottom: solid 1px #e5e5e5;
+          font-family: 'Questrial', sans-serif; 
+
+    }
+
+
+    @media screen and (max-width: 767px) {
+      .form {
+          padding: 20px 15px 10px 15px;
+          max-width: 86%;
+      }
+    }
+
+/* contact us page end */
 
 		

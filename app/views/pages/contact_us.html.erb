@@ -1,21 +1,66 @@
-<%= form_with url: root_path do |form| %>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.email_field :email %>
+<!-- <!DOCTYPE html>
+<html> -->
+<head>
+  <title> Contact Us</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Free Web tutorials">
+  <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+  <meta name="author" content="John Doe">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="header-wrapper">
+  <div id="header" class="container">
+    <div id="logo">
+      <div id="menu">
+        <div class="header-logo"><h2><span>HYDRO-ORIENT</span></h2></li></div>
+        <ul>
+          <% if current_user %>
+            <li><%= link_to "Sign Out" ,destroy_user_session_path,method: :delete%></li>
+          <% else %>
+            <li><a href="<%= user_session_path %>" accesskey="2" title="">Log in</a></li>
+            <li><a href="<%= pages_contact_us_path %>" accesskey="2" title="">Contact us</a></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
   </div>
+</div>
+  <h2 class="contact-us">Contact Us</h2>
+  <div class="main">
+    <form>
+      <fieldset class="fieldset fieldset--hidden">
+        <div class="field">
+          <div class="field__input-wrapper">
+            <label class="field__label" for="email">Email</label>
+            <input placeholder="Email" class="field__input" autocapitalize="off" type="email" name="email">
+          </div>
+        </div>    
 
-  <div class="field">
-    <%= form.label :subject %>
-    <%= form.text_field :subject %>
-  </div>
+        <div class="field">
+          <div class="field__input-wrapper">
+            <label class="field__label" for="last_name">Subject</label>
+            <input placeholder="First name" class="field__input" type="text">
+          </div>
+        </div>
+        <div class="field">
+          <div class="field__input-wrapper">
+            <label class="field__label" for="last_name">Description </label>
+            <textarea class="field__input" placeholder="Description" rows="4"></textarea>
+          </div>
+        </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
+        </fieldset>
+        <div class="form__footer">
+          <button name="button" type="submit" class="btn--cta" data-trekkie-id="complete_order_button" aria-busy="false">
+            <span class="btn__content">Save</span>
+          </button>
+        </div>
+      </form>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+    </div>
+
+
+  </body>
+  <!-- </html> -->
