@@ -88,7 +88,9 @@ a:hover
 .container
 {
 	margin: 0px auto;
-	width: 1200px;
+	width: 100%;
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
 .hey {
@@ -223,8 +225,11 @@ form ::-moz-focus-inner
 .image-full
 {
 	display: block;
-	width: 100%;
-	margin: 0 0 3em 0;
+    width: 100%;
+    margin: 1em 0 3em 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+	border-radius: 5px;
+	transition: all 0.2s;
 }
 
 .image-left
@@ -358,12 +363,25 @@ ul.contact li a:before
 #header-wrapper
 {
 	overflow: hidden;
-	padding: 2em 0em 2em 0em;
+	padding: 5px 0;
+	background: #E5EEFF;
+	border-bottom: 1px solid #3E5A99;
+
 }
 
 #header
 {
 	text-align: center;
+}
+.header-logo{
+	float: left;
+	padding: 13px 5px;
+}
+#header-wrapper ul li{
+
+}
+#header-wrapper ul li{
+
 }
 
 /*********************************************************************************/
@@ -385,7 +403,7 @@ ul.contact li a:before
 #logo a
 {
 	text-decoration: none;
-	color: #FFF;
+	color: #3E5A99;
 }
 
 #logo span
@@ -393,12 +411,12 @@ ul.contact li a:before
 	padding-right: 0.5em;
 	text-transform: uppercase;
 	font-size: 0.90em;
-	color: rgba(255,255,255,1);
+	color: #3E5A99;
 }
 
 #logo span a
 {
-	color: rgba(255,255,255,0.8);
+	color: #3E5A99;
 }
 
 
@@ -413,8 +431,9 @@ ul.contact li a:before
 
 #menu ul
 {
-	display: inline-block;
-	padding: 0em 2em;
+	float: right;
+	padding: 0 0;
+	margin-bottom: 0;
 	text-align: center;
 }
 
@@ -432,12 +451,12 @@ ul.contact li a:before
 	font-weight: 600;
 
 	outline: 0;
-	color: #FFF;
 }
 
 #menu li:hover a, #menu li.active a, #menu li.active span
 {
 	background: #3E5A99;
+	color: #fff;
 }
 
 #menu .current_page_item a
@@ -491,10 +510,7 @@ ul.contact li a:before
 
 #welcome
 {
-	overflow: hidden;
-	width: 1200px;
-	padding: 1em 0px 0em 0px;
-	text-align: center;
+	padding-top: 25px;
 }
 
 #welcome .content
@@ -511,13 +527,19 @@ ul.contact li a:before
 
 #welcome .title h2
 {
-	color: #FFF;
+	color: #3E5A99;
+	font-size: 28px;
+	text-align: center;
 }
 
 #welcome a,
 #welcome strong
 {
 	color: #C6C2C4;
+}
+.welcm-discription p{
+    margin-bottom: 5px;
+    font-size: 17px;
 }
 
 /*********************************************************************************/
@@ -528,7 +550,7 @@ ul.contact li a:before
 {
 	overflow: hidden;
 	padding: 0em 0em 0em 0em;
-	text-align: center;
+
 }
 
 #page
@@ -624,13 +646,30 @@ ul.contact li a:before
 /* Portfolio                                                                     */
 /*********************************************************************************/
 
-#portfolio
-{
+#portfolio{
+	display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+#portfolio li{
+	-ms-flex: 0 0 22.5%;
+    flex: 0 0 22.5%;
+	max-width: 22.5%;
+	position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
 #portfolio .box
 {
 	text-align: center;
+}
+#portfolio .box:hover .image-full{
+	transform: scale(1.04);
 }
 
 #portfolio h3
@@ -1128,3 +1167,56 @@ ul.tools li a:before
 		.icon-yelp:before                 { content: "\f328"; }
 		.icon-cloud-upload:before		  { content: "\f0ee"; }
 		.icon-cloud-download:before		  { content: "\f0ed"; }
+
+
+@media (min-width: 992px){
+	.container {
+		max-width: 960px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.container {
+		max-width: 1170px;
+	}
+}
+
+
+@media (max-width: 1199px) {
+	#portfolio li {
+		-ms-flex: 0 0 21%;
+		flex: 0 0 21%;
+		max-width: 21%;
+	}
+}
+
+@media (max-width: 991px) {
+	#portfolio li {
+		-ms-flex: 0 0 43%;
+		flex: 0 0 43%;
+		max-width: 43%;
+	}
+}
+
+@media (max-width: 767px) {
+	#portfolio li {
+		-ms-flex: 0 0 85%;
+		flex: 0 0 85%;
+		max-width: 85%;
+	}
+}
+
+
+/* @media (min-width:1400px) {
+	.container {
+		max-width: 1370px;
+	}
+} */
+/* 
+@media (min-width:1600px) {
+	.container {
+		max-width: 1460px;
+	}
+} */
+
+		
