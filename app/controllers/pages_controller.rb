@@ -14,4 +14,10 @@ class PagesController < ApplicationController
   	
   end
 
+  def submit_contact_us_details
+    Emailer.send_contact_us_details(params[:contact_us][:email],params[:contact_us][:subject],params[:contact_us][:description]).deliver
+  	flash[:notice]="Your message has been sent, We will get back to you as soon as possible"
+  	redirect_to pages_contact_us_path
+  end
+
 end 

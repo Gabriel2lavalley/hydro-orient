@@ -28,26 +28,27 @@
   </div>
 </div>
   <h2 class="contact-us">Contact Us</h2>
+  <p class="notice"><%= notice %></p>
   <div class="main">
-    <form>
+    <%= form_with url: pages_submit_contact_us_details_path,local: true do |form| %>
       <fieldset class="fieldset fieldset--hidden">
         <div class="field">
           <div class="field__input-wrapper">
             <label class="field__label" for="email">Email</label>
-            <input placeholder="Email" class="field__input" autocapitalize="off" type="email" name="email">
+            <input placeholder="Email" class="field__input" autocapitalize="off" type="email" name="contact_us[email]">
           </div>
         </div>    
 
         <div class="field">
           <div class="field__input-wrapper">
             <label class="field__label" for="last_name">Subject</label>
-            <input placeholder="First name" class="field__input" type="text">
+            <input placeholder="Subject" class="field__input" type="text" name="contact_us[subject]">
           </div>
         </div>
         <div class="field">
           <div class="field__input-wrapper">
             <label class="field__label" for="last_name">Description </label>
-            <textarea class="field__input" placeholder="Description" rows="4"></textarea>
+            <textarea class="field__input" placeholder="Description" rows="4" name="contact_us[description]"></textarea>
           </div>
         </div>
 
@@ -57,7 +58,7 @@
             <span class="btn__content">Save</span>
           </button>
         </div>
-      </form>
+      <% end %>
 
     </div>
 

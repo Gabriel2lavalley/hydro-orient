@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get 'pages/log-in'
   get 'pages/load_map'
   get 'pages/contact_us'
+  post 'pages/submit_contact_us_details'
 end
