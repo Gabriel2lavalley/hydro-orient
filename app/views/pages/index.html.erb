@@ -28,23 +28,7 @@
 </style>
 </head>
 <body>
-<div id="header-wrapper";>
-	<div id="header" class="container">
-		<div id="logo">
-			<div id="menu">
-				<div class="header-logo"><h2><span>HYDRO-ORIENT</span></h2></li></div>
-				<ul>
-					<% if current_user %>
-						<li><%= link_to "Sign Out" ,destroy_user_session_path,method: :delete%></li>
-					<% else %>
-						<li><a href="<%= user_session_path %>" accesskey="2" title="">Log in</a></li>
-						<li><a href="<%= pages_contact_us_path %>" accesskey="2" title="">Contact us</a></li>
-					<% end %>
-				</ul>
-			</div>
-		</div>
-	</div>
-</div>
+  <%= render 'layouts/header' %>
 <div id="page-wrapper">
 	<div id="welcome" class="container">
 		<div class="title">

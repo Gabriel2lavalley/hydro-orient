@@ -10,25 +10,8 @@
   <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div id="header-wrapper">
-  <div id="header" class="container">
-    <div id="logo">
-      <div id="menu">
-        <div class="header-logo"><h2><span>HYDRO-ORIENT</span></h2></li></div>
-        <ul>
-          <% if current_user %>
-            <li><%= link_to "Sign Out" ,destroy_user_session_path,method: :delete%></li>
-          <% else %>
-            <li><a href="<%= user_session_path %>" accesskey="2" title="">Log in</a></li>
-            <li><a href="<%= pages_contact_us_path %>" accesskey="2" title="">Contact us</a></li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
+  <%= render 'layouts/header' %>
   <h2 class="contact-us">Contact Us</h2>
-  <p class="notice"><%= notice %></p>
   <div class="main">
     <%= form_with url: pages_submit_contact_us_details_path,local: true do |form| %>
       <fieldset class="fieldset fieldset--hidden">

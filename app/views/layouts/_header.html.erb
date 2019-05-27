@@ -1,0 +1,39 @@
+<div id="header-wrapper">
+  <div id="header" class="container">
+    <div id="logo">
+      <div id="menu">
+        <div class="header-logo">
+          <h2><span>HYDRO-ORIENT</span>
+          </h2>
+        </div>
+        <div class="mbl-toggle">
+          <i class="toggle-icon"></i>
+        </div>
+        <ul>
+          <% if current_user %>
+            <li><%= link_to "Sign Out" ,destroy_user_session_path,method: :delete%></li>
+          <% else %>
+            <li><a href="<%= user_session_path %>" accesskey="2" title="">Log in</a></li>
+            <li><a href="<%= pages_contact_us_path %>" accesskey="2" title="">Contact us</a></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<% if notice.present? %>
+  <div class="alert-box success"><%= notice %><i class="">✕</i></div>
+<% end %>
+<% if alert.present? %>
+  <div class="alert-box failure"><%= alert %><i class="">✕</i></div>
+<% end %>
+
+
+<script>
+  $(".mbl-toggle").click(function(){
+    $("#menu ul").slideToggle();
+  });
+  $(".alert-box i").click(function(){
+    $(this).parents('.alert-box').toggle();
+  });
+</script>
