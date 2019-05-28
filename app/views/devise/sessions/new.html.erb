@@ -4,13 +4,13 @@
 <div class="form">
 
   <div class="field">
-    <p style="text-align: center;"><%= f.label :email %><br /></p>
-    <p><%= f.email_field :email, autofocus: true, autocomplete: "email" %></p>
+    <p style="margin: 15px 0 5px 0; text-transform: capitalize; font-size: 18px;"><%= :email %><br /></p>
+    <div><%= f.email_field :email, autofocus: true, autocomplete: "email",class: "field__input" %></div>
   </div>
 
   <div class="field">
-    <p style="text-align:center"><%= f.label :password %><br /></p>
-    <p><%= f.password_field :password, autocomplete: "current-password" %></p>
+    <p style="margin: 15px 0 5px 0; text-transform: capitalize; font-size: 18px;"><%= :password %><br /></p>
+    <div><%= f.password_field :password, autocomplete: "current-password",class: "field__input" %></div>
   </div>
 
   <% if devise_mapping.rememberable? %>
@@ -19,8 +19,8 @@
    <% end %>
    </div>
 
-   <div class="actions">
-    <%= f.submit "Log in" %>
+   <div class="actions text-center">
+    <%= f.submit "Log in",class: "btn--cta" %>
   </div>
 <% end %>
 
@@ -32,11 +32,16 @@
 <style>
 .form {
   background: #fff;
-  padding: 0em 4em 0em;
+  padding: 15px 30px 0 30px;
   max-width: 600px;
   margin: 40px auto 0;
   box-shadow: 0 0 .3em #222;
   border-radius: 2px;
+}
+.actions.text-center{
+    margin: 40px 0 0 0;
+    display: inline-block;
+    width: 100%;
 }
 
 h2 {
@@ -52,7 +57,7 @@ p {
   margin: 0 0 3em 0;
   position: relative;
 }
-input {
+/*input {
   display: block;
   box-sizing: border-box;
   width: 100%;
@@ -74,8 +79,8 @@ input[type="password"] {
 input[type="text"]:focus,
 input[type="password"]:focus {
   background: #fff
-}
-input[type="submit"] {
+}*/
+/*input[type="submit"] {
   background: $button;
   box-shadow: 0 3px 0 0 darken($button, 10%);
   border-radius: 10px;
@@ -98,7 +103,7 @@ input[type="submit"]:hover {
 }
 input[type="submit"]:hover {
 
-}
+}*/
 label{
   position: absolute;
   left: 8px;
