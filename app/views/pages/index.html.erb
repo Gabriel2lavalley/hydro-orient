@@ -1,34 +1,6 @@
 <% content_for :title, "Hydro-orient official website" %>
 <% content_for :meta_description, "Hydro-orent pending..." %>
 
-<head>
-<meta charset="UTF-8" />
-    <meta name="description" content="Free Web tutorials" />
-    <meta name="keywords" content="HTML,CSS,XML,JavaScript" />
-    <meta name="author" content="John Doe" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#00568f" />
-    <meta name="msapplication-navbutton-color" content="#00568f" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="#00568f" />
-
-<title></title>
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial" rel="stylesheet" />
-<link href="default.css" rel="stylesheet" type="text/css" media="all" />
-<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
-
-<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
-<style>
-	body
-	{
-		background: #fdfdfd;
-		color: #3E5A99;
-	}
-</style>
-</head>
-<body>
-  <%= render 'layouts/header' %>
 <div id="page-wrapper">
 	<div id="welcome" class="container">
 		<div class="title">
@@ -56,14 +28,14 @@
 <div class="wrapper">
 	<div class="container">
 		<ul id="portfolio">
-			<li class="">
+			<li class="portfolio-item">
 				<div class="box">
 					<%= image_tag("scr01.jpg", size: '120x120', class: "image image-full") %> 
 					<h3>Titre</h3>
 					<p>Le premier système de gestion de l’eau autonome assurant la coupure d’eau automatique en cas de fuite ou d’anomalie sur le réseau.</p>
 					</div>
 			</li>
-			<li class="">
+			<li class="portfolio-item">
 				<div class="box"> 
 					<%= image_tag("scr02.jpg", size: '120x120', class: "image image-full") %> 
 					<h3>La gestion de l'eau dans les collectivités</h3>
@@ -75,14 +47,14 @@
 							=> Démarche environnementale.</p>
 					</div>
 			</li>
-			<li class="">
+			<li class="portfolio-item">
 				<div class="box"> 
 					<%= image_tag("scr03.jpg", size: '120x120', class: "image image-full") %> 
 					<h3>Application</h3>
 					<p>Application pour les particuliers, les immeubles a bureaux, les collectivités, les hôpitaux, les industries.</p>
 					</div>
 			</li>
-			<li class="">
+			<li class="portfolio-item">
 				<div class="box"> 
 					<%= image_tag("scr04.jpg", size: '120x120', class: "image image-full") %> 
 					<h3>Détéction</h3>
@@ -95,4 +67,3 @@
 <div id="copyright" class="container">
 	<p>&copy; Untitled. 2019 Hydro-orient. All Rights Reserved.</p>
 </div>
-</body>

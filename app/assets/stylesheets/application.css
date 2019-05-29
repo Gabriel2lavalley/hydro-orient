@@ -34,7 +34,7 @@ body
 	margin: 0px;
 	padding: 0px;
 	/*background: #334467;*/
-	font-family: 'Questrial', sans-serif;
+	
 	font-size: 12pt;
 	/*color: #E5EEFF;*/
 }
@@ -413,6 +413,7 @@ ul.contact li a:before
 	text-transform: uppercase;
 	font-size: 0.90em;
 	color: #3E5A99;
+    /*font-family: 'Questrial', sans-serif;*/
 }
 
 #logo span a
@@ -450,7 +451,7 @@ ul.contact li a:before
 	text-decoration: none;
 	font-size: 0.90em;
 	font-weight: 600;
-
+    /*font-family: 'Questrial', sans-serif;*/
 	outline: 0;
 }
 
@@ -664,6 +665,9 @@ ul.contact li a:before
     width: 100%;
     padding-right: 15px;
     padding-left: 15px;
+}
+.portfolio-item{
+	margin: 0 auto;
 }
 
 #portfolio .box
@@ -1227,12 +1231,12 @@ ul.tools li a:before
       width: 100%;
       position: relative;
       margin: 0 auto;
-      margin-top: 60px;
+      margin-top: 30px;
       margin-bottom: 60px;
         font-family: 'Questrial', sans-serif;
           background: #fff;
         box-shadow: 0 0 3px rgba(0,0,0,0.15);
-        padding: 30px 0 20px 0;
+        padding: 30px 15px 20px 15px;
         border-radius: 5px;
     }
     @media screen and (min-width: 768px) {
@@ -1402,12 +1406,12 @@ ul.tools li a:before
 	    width: auto;
     }
     h2.contact-us {
-        margin: 0 0 50px 0;
+        margin: 30px 0 20px 0;
         padding: 10px;
         text-align: center;
         font-size: 30px;
         color: darken(#e5e5e5, 50%);
-        border-bottom: solid 1px #e5e5e5;
+        border-bottom: solid 0 #e5e5e5;
           font-family: 'Questrial', sans-serif; 
 
     }
