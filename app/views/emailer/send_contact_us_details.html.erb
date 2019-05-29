@@ -1,18 +1,11 @@
-Hello Mr staynn,
+Hello,
 
 <%= @email %> sent you an E-email: 
 
-<table>
-	<thead>
-		<tr>
-			<th>Subject:</th>
-			<th>Description:</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<th><%= @subject %></th>
-			<th><%= @description %></th>
-		</tr>
-	</tbody>
-</table>
+<p>
+Subject: <%= @subject %>
+</p>
+
+<p>
+Message description: <%= @description %>
+</p>
