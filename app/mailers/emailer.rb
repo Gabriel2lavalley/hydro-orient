@@ -3,6 +3,6 @@ class Emailer < ApplicationMailer
 		@email = email
 		@subject = subject
 		@description = description
-		mail(:to => "mr.staynn@gmail.com", :subject => "Contact Us Details")
+		mail(:to => "mr.staynn@gmail.com", :subject => "Contact Us - Hydro-orient")
 	end
 end

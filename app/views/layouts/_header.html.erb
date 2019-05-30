@@ -3,7 +3,7 @@
     <div id="logo">
       <div id="menu">
         <div class="header-logo">
-          <a href="<%= root_path %>"><h2><span>HYDRO-ORIENT</span></h2></a>
+        <h2><span><span style="padding-right: 3px;"> <%= image_tag("logo.png", height:40,width:40,:class=> "img-circular") %></span><a href="<%= root_path %>">HYDRO-ORIENT</span></h2></a> 
         </div>
         <div class="mbl-toggle">
           <i class="toggle-icon"></i>
@@ -36,3 +36,10 @@
     $(this).parents('.alert-box').toggle();
   });
 </script>
+
+
+<style>
+img-circular {
+border-radius: 100px !important;
+}
+  </style>
