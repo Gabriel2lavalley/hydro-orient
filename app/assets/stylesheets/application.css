@@ -362,12 +362,11 @@ ul.contact li a:before
 
 #header-wrapper
 {
-	height: 65px;
+	height: 70px;
 	position: relative;
 	padding: 5px 0;
 	background: #E5EEFF;
 	border-bottom: 1px solid #3E5A99;
-
 }
 
 #header
@@ -376,7 +375,7 @@ ul.contact li a:before
 }
 .header-logo{
 	float: left;
-	padding: 13px 5px;
+	padding: 5px 5px !important;
 }
 #header-wrapper ul li{
 
@@ -391,6 +390,10 @@ ul.contact li a:before
 
 #logo
 {
+}
+
+.bold {
+	font-weight: 900 !important;
 }
 
 #logo h1
@@ -648,7 +651,10 @@ ul.contact li a:before
 /*********************************************************************************/
 /* Portfolio                                                                     */
 /*********************************************************************************/
-
+.portfolio {
+	width: 100%
+	height: 100px;
+}
 #portfolio{
 	display: -ms-flexbox;
     display: flex;
@@ -675,7 +681,11 @@ ul.contact li a:before
 	text-align: center;
 }
 #portfolio .box:hover .image-full{
-	transform: scale(1.04);
+	transform: scale(1.10);
+}
+
+.aggrandir:hover{
+	transform: scale(1.05);
 }
 
 #portfolio h3
