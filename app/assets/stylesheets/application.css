@@ -360,14 +360,6 @@ ul.contact li a:before
 /* Header                                                                        */
 /*********************************************************************************/
 
-#header-wrapper
-{
-	height: 70px;
-	position: relative;
-	padding: 5px 0;
-	background: #3E5A99;
-	border-bottom: 1px solid #E5EEFF;
-}
 
 #header
 {
@@ -1372,33 +1364,6 @@ ul.tools li a:before
 		.alert-msg{
 
 		}
-
-
-    @media screen and (max-width: 767px) {
-			#menu ul{
-				display: none;
-				position: absolute;
-				top: 100%;
-				z-index: 9999;
-				left: 0;
-				right: 0;
-				background: #3E5A99;;
-				box-shadow: 0 3px 5px rgba(0,0,0,0.1);
-		}
-		#header-wrapper ul li {
-			width: 100%;
-			text-align: left;
-		}
-			.mbl-toggle{
-				display: block;
-			}
-		}
-
-    @media screen and (min-width: 768px) {
-      .btn {
-        max-width: 315px;
-      }
-    }
     .btn--cta {
         border-radius: 10px;
 	    background-color: #3E5A99;
