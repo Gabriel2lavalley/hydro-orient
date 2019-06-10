@@ -3,14 +3,14 @@
     <div id="logo">
       <div id="menu">
         <div class="header-logo">
-        <h2><span><span style="padding-right: 3px;"> <%= image_tag("logo.png", height:52,width:40,:class=> "img-circular") %></span style="padding: 20px 5px;"><a href="<%= root_path %>"><div class="inlineq">HYDRO-</div><div class="inlinew">ORIENT</div></span></h2></a> 
+          <h2><span><span style="padding-right: 3px;"> <%= image_tag("logo.png", height:52,width:40,:class=> "img-circular") %></span style="padding: 20px 5px;"><a href="<%= root_path %>"><div class="inlineq">HYDRO-</div><div class="inlinew">ORIENT</div></span></h2></a> 
         </div>
         <div class="mbl-toggle">
           <i class="toggle-icon"></i>
         </div>
         <ul>
           <% if current_user %>
-            <b><li><%= link_to "Log Out" ,destroy_user_session_path,method: :delete, class: "bold" %></b></li>
+          <b><li><%= link_to "Log Out" ,destroy_user_session_path,method: :delete, class: "bold" %></b></li>
           <% else %>
           <li><b><a href="<%= pages_contact_us_path %>" accesskey="2" title="" class="bold">Contact Us</a></b></li>
           <li><b><a href="<%= user_session_path %>" accesskey="2" title="" class="bold">Log In</a></b></li>
@@ -21,10 +21,10 @@
   </div>
 </div>
 <% if notice.present? %>
-  <div class="alert-box success"><%= notice %><i class="">✕</i></div>
+<div class="alert-box success"><%= notice %><i class="">✕</i></div>
 <% end %>
 <% if alert.present? %>
-  <div class="alert-box failure"><%= alert %><i class="">✕</i></div>
+<div class="alert-box failure"><%= alert %><i class="">✕</i></div>
 <% end %>
 
 
@@ -40,16 +40,18 @@
 
 <style>
 .img-circular {
-border-radius: 100px !important;
+  border-radius: 100px !important;
 }
 .inlineq {
-display: inline-block;
-font-weight: 700;
+  display: inline-block;
+  font-weight: 700;
+  color:white;
 }
 
 .inlinew {
   font-weight: 230;
   display: inline-block
+  color:white;
 
 }
 #header-wrapper
@@ -61,29 +63,87 @@ font-weight: 700;
   border-bottom: 1px solid #E5EEFF;
 }
 @media screen and (max-width: 767px) {
-      #menu ul{
-        display: none;
-        position: absolute;
-        top: 100%;
-        z-index: 9999;
-        left: 0;
-        right: 0;
-        background: #3E5A99;;
-        box-shadow: 0 3px 5px rgba(0,0,0,0.1);
-    }
-    #header-wrapper ul li {
-      width: 100%;
-      text-align: left;
-    }
-      .mbl-toggle{
-        display: block;
-      }
-    }
+  #menu ul{
+    display: none;
+    position: absolute;
+    top: 100%;
+    z-index: 9999;
+    left: 0;
+    right: 0;
+    background: #3E5A99;;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+  }
+  #header-wrapper ul li {
+    width: 100%;
+    text-align: left;
+  }
+  .mbl-toggle{
+    display: block;
+  }
+}
 
-    @media screen and (min-width: 768px) {
-      .btn {
-        max-width: 315px;
-      }
-    }
+@media screen and (min-width: 768px) {
+  .btn {
+    max-width: 315px;
+  }
+}
 
-  </style>
+.bold {
+  font-weight: 900 !important;
+}
+
+#menu
+{
+}
+
+#menu ul
+{
+  float: right;
+  padding: 0 0;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+#menu li
+{
+  display: inline-block;
+}
+
+#menu li a, #menu li span
+{
+  display: inline-block;
+  padding: 1.3em 1.5em;
+  text-decoration: none;
+  font-size: 0.90em;
+  font-weight: 600;
+  /*font-family: 'Questrial', sans-serif;*/
+  outline: 0;
+}
+
+#menu li:hover a, #menu li.active a, #menu li.active span
+{
+  background: #3E5A99;
+  color: #fff;
+}
+
+#menu .current_page_item a
+{
+  color: red;
+}
+@media only screen and (max-width: 600px) {
+  header-wrapper {
+    color:red;
+    width:100%;
+  }
+}
+#header
+{
+  text-align: center;
+}
+.header-logo{
+  float: left;
+  padding: 5px 5px !important;
+}
+
+
+</style>

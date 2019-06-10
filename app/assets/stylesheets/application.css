@@ -39,13 +39,6 @@ body
 	/*color: #E5EEFF;*/
 }
 
-@media only screen and (max-width: 600px) {
-	header-wrapper {
-		color:red;
-		width:100%;
-	}
-}
-
 
 h1, h2, h3
 {
@@ -360,15 +353,6 @@ ul.contact li a:before
 /* Header                                                                        */
 /*********************************************************************************/
 
-
-#header
-{
-	text-align: center;
-}
-.header-logo{
-	float: left;
-	padding: 5px 5px !important;
-}
 #header-wrapper ul li{
 
 }
@@ -382,10 +366,6 @@ ul.contact li a:before
 
 #logo
 {
-}
-
-.bold {
-	font-weight: 900 !important;
 }
 
 #logo h1
@@ -419,45 +399,6 @@ ul.contact li a:before
 /*********************************************************************************/
 /* Menu                                                                          */
 /*********************************************************************************/
-
-#menu
-{
-}
-
-#menu ul
-{
-	float: right;
-	padding: 0 0;
-	margin-bottom: 0;
-	text-align: center;
-}
-
-#menu li
-{
-	display: inline-block;
-}
-
-#menu li a, #menu li span
-{
-	display: inline-block;
-	padding: 1.3em 1.5em;
-	text-decoration: none;
-	font-size: 0.90em;
-	font-weight: 600;
-    /*font-family: 'Questrial', sans-serif;*/
-	outline: 0;
-}
-
-#menu li:hover a, #menu li.active a, #menu li.active span
-{
-	background: #3E5A99;
-	color: #fff;
-}
-
-#menu .current_page_item a
-{
-	color: red;
-}
 
 
 /*********************************************************************************/
