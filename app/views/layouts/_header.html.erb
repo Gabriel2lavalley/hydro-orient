@@ -10,10 +10,14 @@
         </div>
         <ul>
           <% if current_user %>
-          <b><li><%= link_to "Log Out" ,destroy_user_session_path,method: :delete, class: "bold" %></b></li>
+            <b><li><%= link_to "Map" ,root_path,method: :delete, class: "bold" %></b></li>
+            <b><li><%= link_to "Chart 1" ,dashboard_index_path, class: "bold" %></b></li>
+            <b><li><%= link_to "Chart 2" ,dashboard_chart2_path, class: "bold" %></b></li>
+            <b><li><%= link_to "Chart 3" ,dashboard_chart3_path, class: "bold" %></b></li>
+            <b><li><%= link_to "Log Out" ,destroy_user_session_path,method: :delete, class: "bold" %></b></li>
           <% else %>
-          <li><b><a href="<%= pages_contact_us_path %>" accesskey="2" title="" class="bold">Contact Us</a></b></li>
-          <li><b><a href="<%= user_session_path %>" accesskey="2" title="" class="bold">Log In</a></b></li>
+            <li><b><a href="<%= pages_contact_us_path %>" accesskey="2" title="" class="bold">Contact Us</a></b></li>
+            <li><b><a href="<%= user_session_path %>" accesskey="2" title="" class="bold">Log In</a></b></li>
           <% end %>
         </ul>
       </div>
@@ -62,7 +66,7 @@
   background: #3E5A99;
   border-bottom: 1px solid #E5EEFF;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 991px) {
   #menu ul{
     display: none;
     position: absolute;

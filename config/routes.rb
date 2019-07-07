@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   get 'pages/load_map'
   get 'pages/contact_us'
   post 'pages/submit_contact_us_details'
+  get 'dashboard/index'
+  get 'dashboard/chart2'
+  get 'dashboard/chart3'
 end
