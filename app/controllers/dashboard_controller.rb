@@ -67,31 +67,35 @@ class DashboardController < ApplicationController
           renderAt: 'chartContainer',
           dataSource: {
             :"chart" => {
-              :"caption" => 'Reach of Social Media Platforms amoung youth',
-              :"yaxisname" => '% of youth on this platform',
-              :"subcaption" => '2015-2019',
+              :"caption" => 'Monthly water supply among four routers in L/s',
+              :"yaxisname" => 'Water Supply Speed in L/s',
+              :"subcaption" => 'Jan-Jul',
               :"showhovereffect" => '1',
-              :"numbersuffix" => '%',
+              :"numbersuffix" => 'L/s',
               :"drawcrossline" => '1',
               :"plottooltext" =>
-                '<b>$dataValue</b> of youth were on $seriesName',
+                '<b>$dataValue</b> of water supply were on $seriesName',
               :"theme" => 'fusion'
             },
             :"categories" => [
               {
                 :"category" => [
-                  { :"label" => '2015' },
-                  { :"label" => '2016' },
-                  { :"label" => '2017' },
-                  { :"label" => '2018' },
-                  { :"label" => '2019' }
+                  { :"label" => 'Jan' },
+                  { :"label" => 'Feb' },
+                  { :"label" => 'Mar' },
+                  { :"label" => 'Apr' },
+                  { :"label" => 'May' },
+                  { :"label" => 'Jun' },
+                  { :"label" => 'Jul' }
                 ]
               }
             ],
             :"dataset" => [
               {
-                :"seriesname" => 'Facebook',
+                :"seriesname" => 'Router 1',
                 :"data" => [
+                  { :"value" => Random.rand(100) },
+                  { :"value" => Random.rand(100) },
                   { :"value" => Random.rand(100) },
                   { :"value" => Random.rand(100) },
                   { :"value" => Random.rand(100) },
@@ -100,8 +104,10 @@ class DashboardController < ApplicationController
                 ]
               },
               {
-                :"seriesname" => 'Instagram',
+                :"seriesname" => 'Router 2',
                 :"data" => [
+                  { :"value" => Random.rand(100) },
+                  { :"value" => Random.rand(100) },
                   { :"value" => Random.rand(100) },
                   { :"value" => Random.rand(100) },
                   { :"value" => Random.rand(100) },
@@ -110,8 +116,10 @@ class DashboardController < ApplicationController
                 ]
               },
               {
-                :"seriesname" => 'LinkedIn',
+                :"seriesname" => 'Router 3',
                 :"data" => [
+                  { :"value" => Random.rand(100) },
+                  { :"value" => Random.rand(100) },
                   { :"value" => Random.rand(100) },
                   { :"value" => Random.rand(100) },
                   { :"value" => Random.rand(100) },
@@ -120,8 +128,10 @@ class DashboardController < ApplicationController
                 ]
               },
               {
-                :"seriesname" => 'Twitter',
+                :"seriesname" => 'Router 4',
                 :"data" => [
+                  { :"value" => Random.rand(100) },
+                  { :"value" => Random.rand(100) },
                   { :"value" => Random.rand(100) },
                   { :"value" => Random.rand(100) },
                   { :"value" => Random.rand(100) },
@@ -145,10 +155,10 @@ class DashboardController < ApplicationController
           renderAt: 'chartContainer',
           dataSource: {
             :"chart" => {
-              :"caption" => 'Average Fastball Velocity',
-              :"yaxisname" => 'Velocity (in mph)',
+              :"caption" => 'Average Speed Of Water Supply',
+              :"yaxisname" => 'Speed (in L/s)',
               :"subcaption" => '[2008-2019]',
-              :"numbersuffix" => ' mph',
+              :"numbersuffix" => ' L/s',
               :"rotatelabels" => '1',
               :"setadaptiveymin" => '1',
               :"theme" => 'fusion'
