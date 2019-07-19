@@ -1,2 +1,14 @@
-<h3>My Chart</h3>
+<div> <span> Average: </span> <span id="textid"> <span> </div>
 <div id="chartContainer"><%= @chart.render() %></div>
+
+<script>
+random();
+function random(){
+    return Math.round(Math.random()*20)-10;
+}
+var average_speed = 11624988;
+setInterval( function() {
+        var text = average_speed + random();
+        document.getElementById("textid").innerHTML = text;
+      }, 1000);
+</script>

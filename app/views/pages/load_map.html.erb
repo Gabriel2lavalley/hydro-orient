@@ -12,6 +12,10 @@
    background-color: #fff;
    color: #000;
 }
+.active_button {
+  color: black;
+  background-color: grey;
+}
 </style>
 <div id="map"></div>
 <br>
@@ -20,16 +24,16 @@ Select a counter
 </div>
 <hr>
 <div class="center">
-<button class="counter hey" data-id="0">Counter 1</button>
-<button class="counter hey" data-id="1">Counter 2</button>
-<button class="counter hey" data-id="2">Counter 3</button>
-<button class="counter hey" data-id="3">Counter 4</button>
-<button class="counter hey" data-id="4">Counter 5</button>
-<button class="counter hey" data-id="5">Counter 6</button>
-<button class="counter hey" data-id="6">Counter 7</button>
-<button class="counter hey" data-id="7">Counter 8</button>
-<button class="counter hey" data-id="8">Counter 9</button>
-<button class="counter hey" data-id="9">Counter 10</button>
+<button class="counter hey" data-id="0" id="0">Counter 1</button>
+<button class="counter hey" data-id="1" id="1">Counter 2</button>
+<button class="counter hey" data-id="2" id="2">Counter 3</button>
+<button class="counter hey" data-id="3" id="3" >Counter 4</button>
+<button class="counter hey" data-id="4" id="4">Counter 5</button>
+<button class="counter hey" data-id="5" id="5">Counter 6</button>
+<button class="counter hey" data-id="6" id="6">Counter 7</button>
+<button class="counter hey" data-id="7" id="7">Counter 8</button>
+<button class="counter hey" data-id="8" id="8">Counter 9</button>
+<button class="counter hey" data-id="9" id="9">Counter 10</button>
 </div>
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnuc-eD5w58Dy2EjdUULXABCk7-MYvJcg&callback=initMap"></script>
@@ -37,6 +41,14 @@ Select a counter
 <script>
   var markers = [];
   var started_counters = [];
+  var times_maker = [];
+  var ii; 
+  for (ii = 0; ii<10; ii++)
+  {
+    var txt = "infoCounter" + ii;
+    times_maker[txt] =0;
+  }
+
   function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 45.516136, lng: -73.656830},
@@ -57,7 +69,7 @@ Select a counter
     ];
 
     var marker, i;
-
+    
     for (i = 0; i < locationCounters.length; i++) {
       eval('infowindow'+ i +' = new google.maps.InfoWindow({ content: locationCounters[i][2] })');
       console.log("test-->",i,"-->",locationCounters[i][0],"-->",locationCounters[i][2])
@@ -70,7 +82,7 @@ Select a counter
       google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
           eval('infowindow'+i+'.open(map, marker)')
-          
+
         }
       })(marker, i));
 
@@ -82,19 +94,39 @@ Select a counter
     }
 
   }
+
   function startCounter(target){
-    if($.inArray( target.attr('id'), started_counters ) == -1){
+      console.log(target.attr('id'));
       var target = $("#"+target.attr('id'))
       var counter = target.text();
-      started_counters.push(target.attr('id'));
-      setInterval( function() {
-        target.html( counter++ + " l/s" );
-      }, target.data('time') );
-    }
+      console.log();
+      id = target.attr('id').slice(target.attr('id').length-1,target.attr('id').length);
+      console.log(id);
+      if(times_maker[target.attr('id')]){
+        $(document.getElementById(id)).removeClass("active_button");
+        clearInterval(times_maker[target.attr('id')]);
+        times_maker[target.attr('id')] = 0;
+      }else {
+        $(document.getElementById(id)).addClass("active_button");
+        if (counter[counter.length-1] == 's'){
+          counter = counter.slice(0,counter.length-4);
+        }
+        times_maker[target.attr('id')] = setInterval( function() {
+          target.html( counter++ + " l/s" );
+        }, target.data('time') );
+      }
+
+      
   }
   $(document).on('click', '.counter', function(event) {
-    console.log(markers[$(this).data("id")]);
-    google.maps.event.trigger(markers[$(this).data("id")], 'click');
+    var id_element = $(this).data("id")
+    if($(document.getElementById(id_element)).hasClass("active_button")){
+      $(document.getElementById(id_element)).removeClass("active_button");
+      clearInterval(times_maker["infoCounter"+id_element]);
+      times_maker["infoCounter"+id_element] = 0;
+    }else{
+      google.maps.event.trigger(markers[$(this).data("id")], 'click');
+    }
     /* Act on the event */
   });
 </script>
