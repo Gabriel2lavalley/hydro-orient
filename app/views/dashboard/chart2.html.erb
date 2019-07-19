@@ -10,20 +10,25 @@
 <div id="chartContainer"><%= @chart.render() %></div>
 
 <script>
-random();
 function random(){
-    return Math.round(Math.random()*20)-10;
+    return Math.round(Math.random()*20) - 10;
 }
 function random1(){
-    return Math.round(Math.random()*10);
+    return Math.round(Math.random()*10) - 5;
 }
 var average_speed = 150;
+var mini_speed = 10;
+var max_speed = 500;
 setInterval( function() {
         var text = average_speed + random();
-        var mini = text - random1();
-        var max = text + random1();
         document.getElementById("textid").innerHTML = text + "L/s";
-        document.getElementById("textmini").innerHTML = mini + "L/s";
-        document.getElementById("textmax").innerHTML = max + "L/s";
       }, 1000);
+setInterval( function() {
+        var text = mini_speed + random1();
+        document.getElementById("textmini").innerHTML = text + "L/s";
+      }, 6000);
+setInterval( function() {
+        var text = max_speed + random();
+        document.getElementById("textmax").innerHTML = text + "L/s";
+      }, 3000);
 </script>
