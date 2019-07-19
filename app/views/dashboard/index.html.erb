@@ -1,4 +1,12 @@
-<div> <span> Average: </span> <span id="textid"> <span> </div>
+<style>
+    .textcss{
+        padding: 15px;
+        border: 1px solid black;
+    }
+</style>
+<div class = "textcss" > <span> Average: </span> <span id="textid" style= "padding-right: 20px;"> </span> 
+ <span> Minimum: </span> <span id="textmini" style= "padding-right: 20px;"> </span> 
+ <span> Maximum: </span> <span id="textmax" style= "padding-right: 20px;"> </span> </div>
 <div id="chartContainer"><%= @chart.render() %></div>
 
 <script>
@@ -6,9 +14,16 @@ random();
 function random(){
     return Math.round(Math.random()*20)-10;
 }
-var average_speed = 11624988;
+function random1(){
+    return Math.round(Math.random()*10);
+}
+var average_speed = 150;
 setInterval( function() {
         var text = average_speed + random();
-        document.getElementById("textid").innerHTML = text;
+        var mini = text - random1();
+        var max = text + random1();
+        document.getElementById("textid").innerHTML = text + "L/s";
+        document.getElementById("textmini").innerHTML = mini + "L/s";
+        document.getElementById("textmax").innerHTML = max + "L/s";
       }, 1000);
 </script>

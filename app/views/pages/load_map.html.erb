@@ -24,16 +24,16 @@ Select a counter
 </div>
 <hr>
 <div class="center">
-<button class="counter hey" data-id="0" id="0">Counter 1</button>
-<button class="counter hey" data-id="1" id="1">Counter 2</button>
-<button class="counter hey" data-id="2" id="2">Counter 3</button>
-<button class="counter hey" data-id="3" id="3" >Counter 4</button>
-<button class="counter hey" data-id="4" id="4">Counter 5</button>
-<button class="counter hey" data-id="5" id="5">Counter 6</button>
-<button class="counter hey" data-id="6" id="6">Counter 7</button>
-<button class="counter hey" data-id="7" id="7">Counter 8</button>
-<button class="counter hey" data-id="8" id="8">Counter 9</button>
-<button class="counter hey" data-id="9" id="9">Counter 10</button>
+<button class="counter hey" data-id="0" id="0">Counter 1 - On</button>
+<button class="counter hey" data-id="1" id="1">Counter 2 - On</button>
+<button class="counter hey" data-id="2" id="2">Counter 3 - On</button>
+<button class="counter hey" data-id="3" id="3" >Counter 4 - On</button>
+<button class="counter hey" data-id="4" id="4">Counter 5 - On</button>
+<button class="counter hey" data-id="5" id="5">Counter 6 - On</button>
+<button class="counter hey" data-id="6" id="6">Counter 7 - On</button>
+<button class="counter hey" data-id="7" id="7">Counter 8 - On</button>
+<button class="counter hey" data-id="8" id="8">Counter 9 - On</button>
+<button class="counter hey" data-id="9" id="9">Counter 10 - On</button>
 </div>
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnuc-eD5w58Dy2EjdUULXABCk7-MYvJcg&callback=initMap"></script>
@@ -103,10 +103,12 @@ Select a counter
       id = target.attr('id').slice(target.attr('id').length-1,target.attr('id').length);
       console.log(id);
       if(times_maker[target.attr('id')]){
+        document.getElementById(id).innerHTML = "Counter " + id + " - On";
         $(document.getElementById(id)).removeClass("active_button");
         clearInterval(times_maker[target.attr('id')]);
         times_maker[target.attr('id')] = 0;
       }else {
+        document.getElementById(id).innerHTML = "Counter " + id + " - Off";
         $(document.getElementById(id)).addClass("active_button");
         if (counter[counter.length-1] == 's'){
           counter = counter.slice(0,counter.length-4);
@@ -121,6 +123,7 @@ Select a counter
   $(document).on('click', '.counter', function(event) {
     var id_element = $(this).data("id")
     if($(document.getElementById(id_element)).hasClass("active_button")){
+      document.getElementById(id).innerHTML = "Counter " + id + " - On";
       $(document.getElementById(id_element)).removeClass("active_button");
       clearInterval(times_maker["infoCounter"+id_element]);
       times_maker["infoCounter"+id_element] = 0;
