@@ -6,7 +6,7 @@
 </style>
 <div class = "textcss" > <span> Average: </span> <span id="textid" style= "padding-right: 20px;"> 150L/s</span> 
  <span> Minimum: </span> <span id="textmini" style= "padding-right: 20px;"> 10L/s </span> 
- <span> Maximum: </span> <span id="textmax" style= "padding-right: 20px;"> 500L/s</span> </div>
+ <span> Maximum: </span> <span id="textmax" style= "padding-right: 20px;"> 500L/s </span> </div>
 <div id="chartContainer"><%= @chart.render() %></div>
 
 <script>
@@ -23,12 +23,16 @@ setInterval( function() {
         var text = average_speed + random();
         document.getElementById("textid").innerHTML = text + "L/s";
       }, 1000);
+setTimeout(function() {
 setInterval( function() {
         var text = mini_speed + random1();
         document.getElementById("textmini").innerHTML = text + "L/s";
-      }, 6000);
+      }, 6000)
+}, 500);
+setTimeout(function() {
 setInterval( function() {
         var text = max_speed + random();
         document.getElementById("textmax").innerHTML = text + "L/s";
       }, 3000);
+}, 1000);
 </script>

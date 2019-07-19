@@ -23,12 +23,16 @@ setInterval( function() {
         var text = average_speed + random();
         document.getElementById("textid").innerHTML = text + "L/s";
       }, 1000);
+setTimeout(function() {
 setInterval( function() {
         var text = mini_speed + random1();
         document.getElementById("textmini").innerHTML = text + "L/s";
-      }, 6000);
+      }, 6000)
+}, 500);
+setTimeout(function() {
 setInterval( function() {
         var text = max_speed + random();
         document.getElementById("textmax").innerHTML = text + "L/s";
       }, 3000);
+}, 1000);
 </script>
