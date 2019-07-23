@@ -103,13 +103,13 @@ Select a counter
       id = target.attr('id').slice(target.attr('id').length-1,target.attr('id').length);
       console.log(id);
       if(times_maker[target.attr('id')]){
-        var shownumber = id + 1;
+        var shownumber = parseInt(id) + 1;
         document.getElementById(id).innerHTML = "Counter " + shownumber + " - On";
         $(document.getElementById(id)).removeClass("active_button");
         clearInterval(times_maker[target.attr('id')]);
         times_maker[target.attr('id')] = 0;
       }else {
-        var shownumber = id + 1;
+        var shownumber = parseInt(id) + 1;
         document.getElementById(id).innerHTML = "Counter " + shownumber + " - Off";
         $(document.getElementById(id)).addClass("active_button");
         if (counter[counter.length-1] == 's'){
@@ -125,7 +125,7 @@ Select a counter
   $(document).on('click', '.counter', function(event) {
     var id_element = $(this).data("id")
     if($(document.getElementById(id_element)).hasClass("active_button")){
-      var shownumber = id + 1;
+      var shownumber = parseInt(id) + 1;
       document.getElementById(id).innerHTML = "Counter " + shownumber + " - On";
       $(document.getElementById(id_element)).removeClass("active_button");
       clearInterval(times_maker["infoCounter"+id_element]);
