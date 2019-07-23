@@ -103,12 +103,14 @@ Select a counter
       id = target.attr('id').slice(target.attr('id').length-1,target.attr('id').length);
       console.log(id);
       if(times_maker[target.attr('id')]){
-        document.getElementById(id).innerHTML = "Counter " + (id+1) + " - On";
+        var shownumber = id + 1;
+        document.getElementById(id).innerHTML = "Counter " + shownumber + " - On";
         $(document.getElementById(id)).removeClass("active_button");
         clearInterval(times_maker[target.attr('id')]);
         times_maker[target.attr('id')] = 0;
       }else {
-        document.getElementById(id).innerHTML = "Counter " + (id+1) + " - Off";
+        var shownumber = id + 1;
+        document.getElementById(id).innerHTML = "Counter " + shownumber + " - Off";
         $(document.getElementById(id)).addClass("active_button");
         if (counter[counter.length-1] == 's'){
           counter = counter.slice(0,counter.length-4);
@@ -123,7 +125,8 @@ Select a counter
   $(document).on('click', '.counter', function(event) {
     var id_element = $(this).data("id")
     if($(document.getElementById(id_element)).hasClass("active_button")){
-      document.getElementById(id).innerHTML = "Counter " + (id+1) + " - On";
+      var shownumber = id + 1;
+      document.getElementById(id).innerHTML = "Counter " + shownumber + " - On";
       $(document.getElementById(id_element)).removeClass("active_button");
       clearInterval(times_maker["infoCounter"+id_element]);
       times_maker["infoCounter"+id_element] = 0;
