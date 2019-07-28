@@ -56,16 +56,16 @@ Select a counter
     });
 
     var locationCounters = [
-      [ 45.516136, -73.656830,"<div id='infoCounter0' data-time='100'>400000</div>"],
-      [ 45.5045, -73.5561,"<div id='infoCounter1' data-time='10'>105000</div>"],
-      [ 45.5075, -73.5544,"<div id='infoCounter2' data-time='45'>7500150</div>"],
-      [ 45.5216, -73.5932,"<div id='infoCounter3' data-time='89'>351000</div>"],
-      [ 45.5600, -73.5630,"<div id='infoCounter4' data-time='0.2'>551237</div>"],
-      [ 45.4985, -73.5794,"<div id='infoCounter5' data-time='9'>45600147</div>"],
-      [ 45.4919, -73.6665,"<div id='infoCounter6' data-time='230'>8954001</div>"],
-      [ 45.5365, -73.6147,"<div id='infoCounter7' data-time='134'>22245100</div>"],
-      [ 45.5008, -73.5743,"<div id='infoCounter8' data-time='6'>6543210</div>"],
-      [ 45.5027, -73.5052,"<div id='infoCounter9' data-time='20'>23100041</div>"]
+      [ 45.516136, -73.656830,"<div id='infoCounter0' data-time='100'>400000 m3/s</div>"],
+      [ 45.5045, -73.5561,"<div id='infoCounter1' data-time='400'>105000 m3/s</div>"],
+      [ 45.5075, -73.5544,"<div id='infoCounter2' data-time='50'>7500150 m3/s</div>"],
+      [ 45.5216, -73.5932,"<div id='infoCounter3' data-time='650'>351000 m3/s</div>"],
+      [ 45.5600, -73.5630,"<div id='infoCounter4' data-time='140'>551237 m3/s</div>"],
+      [ 45.4985, -73.5794,"<div id='infoCounter5' data-time='350'>45600147 m3/s</div>"],
+      [ 45.4919, -73.6665,"<div id='infoCounter6' data-time='150'>8954001 m3/s</div>"],
+      [ 45.5365, -73.6147,"<div id='infoCounter7' data-time='512'>22245100 m3/s</div>"],
+      [ 45.5008, -73.5743,"<div id='infoCounter8' data-time='80'>6543210 m3/s</div>"],
+      [ 45.5027, -73.5052,"<div id='infoCounter9' data-time='60'>23100041 m3/s</div>"]
     ];
 
     var marker, i;
@@ -115,7 +115,7 @@ Select a counter
           counter = counter.slice(0,counter.length-4);
         }
         times_maker[target.attr('id')] = setInterval( function() {
-          target.html( counter++ + " l/s" );
+          target.html( counter++ + " m3/s" );
         }, target.data('time') );
       }
 
