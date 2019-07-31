@@ -16,23 +16,23 @@ function random(){
 function random1(){
     return Math.round(Math.random()*10) - 5;
 }
-var average_speed = 150;
+var average_speed = Math.round(Math.random()*20) - 10;
 var mini_speed = 10;
 var max_speed = 500;
 setInterval( function() {
         var text = average_speed + random();
         document.getElementById("textid").innerHTML = text + "m3/h";
-      }, 1000);
+      }, 100000);
 setTimeout(function() {
 setInterval( function() {
         var text = mini_speed + random1();
         document.getElementById("textmini").innerHTML = text + "m3/h";
-      }, 6000)
+      }, 600000)
 }, 500);
 setTimeout(function() {
 setInterval( function() {
         var text = max_speed + random();
         document.getElementById("textmax").innerHTML = text + "m3/h";
-      }, 3000);
+      }, 300000);
 }, 1000);
 </script>

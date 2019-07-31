@@ -56,16 +56,16 @@ Select a counter
     });
 
     var locationCounters = [
-      [ 45.516136, -73.656830,"<div id='infoCounter0' data-time='100'>400000 m3/s</div>"],
-      [ 45.5045, -73.5561,"<div id='infoCounter1' data-time='400'>105000 m3/s</div>"],
-      [ 45.5075, -73.5544,"<div id='infoCounter2' data-time='50'>7500150 m3/s</div>"],
-      [ 45.5216, -73.5932,"<div id='infoCounter3' data-time='650'>351000 m3/s</div>"],
-      [ 45.5600, -73.5630,"<div id='infoCounter4' data-time='140'>551237 m3/s</div>"],
-      [ 45.4985, -73.5794,"<div id='infoCounter5' data-time='350'>45600147 m3/s</div>"],
-      [ 45.4919, -73.6665,"<div id='infoCounter6' data-time='150'>8954001 m3/s</div>"],
-      [ 45.5365, -73.6147,"<div id='infoCounter7' data-time='512'>22245100 m3/s</div>"],
-      [ 45.5008, -73.5743,"<div id='infoCounter8' data-time='80'>6543210 m3/s</div>"],
-      [ 45.5027, -73.5052,"<div id='infoCounter9' data-time='60'>23100041 m3/s</div>"]
+      [ 45.516136, -73.656830,"<div id='infoCounter0' data-time='100000'>400000 m3/h</div>"],
+      [ 45.5045, -73.5561,"<div id='infoCounter1' data-time='200000'>1050 m3/h</div>"],
+      [ 45.5075, -73.5544,"<div id='infoCounter2' data-time='190000'>7500150 m3/h</div>"],
+      [ 45.5216, -73.5932,"<div id='infoCounter3' data-time='165000'>351000 m3/h</div>"],
+      [ 45.5600, -73.5630,"<div id='infoCounter4' data-time='140000'>551237 m3/h</div>"],
+      [ 45.4985, -73.5794,"<div id='infoCounter5' data-time='185000'>45600147 m3/h</div>"],
+      [ 45.4919, -73.6665,"<div id='infoCounter6' data-time='195000'>8954001 m3/h</div>"],
+      [ 45.5365, -73.6147,"<div id='infoCounter7' data-time='121200'>22245100 m3/h</div>"],
+      [ 45.5008, -73.5743,"<div id='infoCounter8' data-time='150000'>6543210 m3/h</div>"],
+      [ 45.5027, -73.5052,"<div id='infoCounter9' data-time='140000'>23100041 m3/h</div>"]
     ];
 
     var marker, i;
@@ -111,11 +111,11 @@ Select a counter
         var shownumber = parseInt(id) + 1;
         document.getElementById(id).innerHTML = "Counter " + shownumber + " - Off";
         $(document.getElementById(id)).addClass("active_button");
-        if (counter[counter.length-1] == 's'){
+        if (counter[counter.length-1] == 'h'){
           counter = counter.slice(0,counter.length-4);
         }
         times_maker[target.attr('id')] = setInterval( function() {
-          target.html( counter++ + " m3/s" );
+          target.html( counter++ + " m3/h" );
         }, target.data('time') );
       }
 

@@ -91,7 +91,7 @@ class DashboardController < ApplicationController
             ],
             :"dataset" => [
               {
-                :"seriesname" => 'Router 1',
+                :"seriesname" => 'Counter 1',
                 :"data" => [
                   { :"value" => Random.rand(1000) },
                   { :"value" => Random.rand(1000) },
@@ -103,7 +103,7 @@ class DashboardController < ApplicationController
                 ]
               },
               {
-                :"seriesname" => 'Router 2',
+                :"seriesname" => 'Counter 2',
                 :"data" => [
                   { :"value" => Random.rand(1000) },
                   { :"value" => Random.rand(1000) },
@@ -115,7 +115,7 @@ class DashboardController < ApplicationController
                 ]
               },
               {
-                :"seriesname" => 'Router 3',
+                :"seriesname" => 'Counter 3',
                 :"data" => [
                   { :"value" => Random.rand(1000) },
                   { :"value" => Random.rand(1000) },
@@ -127,7 +127,7 @@ class DashboardController < ApplicationController
                 ]
               },
               {
-                :"seriesname" => 'Router 4',
+                :"seriesname" => 'Counter 4',
                 :"data" => [
                   { :"value" => Random.rand(100) },
                   { :"value" => Random.rand(100) },
